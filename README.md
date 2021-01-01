@@ -1,3 +1,3 @@
 # Snake
-Simple game coded in C++ and SFML
+Simple game coded in C++ and SFML  
 Work in progress...
