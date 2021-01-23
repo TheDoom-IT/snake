@@ -1,8 +1,8 @@
 # Snake
 ---
 Simple game coded in C++ and SFML. My first bigger project uploaded to Git Hub 😄
-![Menu](https://github.com/TheDoom-IT/snake/tree/main/Images/Git1.png "Menu")
-![In-game](https://github.com/TheDoom-IT/snake/tree/main/Images/Git2.png "In-game")
+![Menu](https://raw.github.com/TheDoom-IT/snake/main/Images/Git1.png "Menu")
+![In-game](https://raw.github.com/TheDoom-IT/snake/main/Images/Git2.png "In-game")
 
 
 
