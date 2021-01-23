@@ -517,6 +517,7 @@ void Game::mDrawString(std::string str, sf::Color col, float y, float x)
 	text.setString(str);
 	text.setOrigin(text.getLocalBounds().width / 2.0, text.getLocalBounds().height / 2.0);
 	mWindow.draw(text);
+
 }
 
 void Game::mAudioPrepare()
