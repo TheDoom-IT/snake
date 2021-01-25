@@ -1,15 +1,10 @@
 # Snake
 ---
-<<<<<<< HEAD
 Simple game coded in C++ and SFML.
 My first bigger project uploaded to Git Hub 😄
 * Menu
 ![Menu](https://raw.github.com/TheDoom-IT/snake/main/Images/Git1.png "Menu")
 * In-game
-=======
-Simple game coded in C++ and SFML. My first bigger project uploaded to Git Hub 😄
-![Menu](https://raw.github.com/TheDoom-IT/snake/main/Images/Git1.png "Menu")
->>>>>>> 1c405a8fecaf5b0d4c4c4b2e703636398d12068e
 ![In-game](https://raw.github.com/TheDoom-IT/snake/main/Images/Git2.png "In-game")
 
 
