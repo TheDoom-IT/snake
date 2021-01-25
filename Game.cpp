@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include <iostream>
 
-Game::Game() : mWindow(sf::VideoMode(800, 600), "SFML works!"), mMenu(mWindow.getSize()), mFPS(30),
+Game::Game() : mWindow(sf::VideoMode(800, 600), "SFML works!",sf::Style::Close), mMenu(mWindow.getSize()), mFPS(30),
 			   mBoardSpriteSize(600)
 {
 	mState = StateGame::MENU;
