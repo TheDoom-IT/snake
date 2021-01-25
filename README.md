@@ -23,7 +23,7 @@ The music and the textures were created with the usage of programs:
 ---
 I coded and tested the project in Visual Studio 2019.
 
-**Visual Studio 2019:**
+**Visual Studio 2019:**  
 Add dependices to the following SFML libraries:
 
 | Debug mode | Release mode |
