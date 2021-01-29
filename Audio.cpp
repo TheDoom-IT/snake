@@ -3,8 +3,6 @@
 Audio::Audio()
 {
 	mMusicVolume = mSoundVolume = 50;
-	//mMusicVolume = 0;
-	//mSoundVolume = 10;
 }
 
 void Audio::mAudioUpdateVolume(float musicVolume, float soundVolume)

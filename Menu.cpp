@@ -180,7 +180,7 @@ void Menu::draw()
 	{
 		for (int y = 0; y <= mSize.y; y += mSprites[SpriteType::BACKGROUND].getGlobalBounds().height)
 		{
-			mSprites[SpriteType::BACKGROUND].setPosition(x, y);
+			mSprites[SpriteType::BACKGROUND].setPosition(x + mSprites[SpriteType::BACKGROUND].getGlobalBounds().width/2.0, y + mSprites[SpriteType::BACKGROUND].getGlobalBounds().height / 2.0);
 			mRender.draw(mSprites[SpriteType::BACKGROUND]);
 		}
 	}

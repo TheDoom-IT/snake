@@ -3,9 +3,10 @@
 #include <cstdlib>
 #include <iostream>
 
-Game::Game() : mWindow(sf::VideoMode(800, 600), "SFML works!",sf::Style::Close), mMenu(mWindow.getSize()), mFPS(30),
-			   mBoardSpriteSize(600)
+Game::Game() : mWindow(sf::VideoMode(800,600), "Snake",sf::Style::Close), mMenu(mWindow.getSize()), mFPS(30)
 {
+	mBoardSpriteSize = mWindow.getSize().y;
+
 	mState = StateGame::MENU;
 	srand(time(NULL));
 	mMoveTime = sf::seconds(0.09);
@@ -78,7 +79,7 @@ void Game::draw()
 		{
 			for (int y = 0; y <= mWindow.getSize().y; y += mSprites[SpriteType::Background].getGlobalBounds().height)
 			{
-				mSprites[SpriteType::Background].setPosition(x, y);
+				mSprites[SpriteType::Background].setPosition(x + mSprites[SpriteType::Background].getGlobalBounds().width / 2.0, y + mSprites[SpriteType::Background].getGlobalBounds().height / 2.0);
 				mWindow.draw(mSprites[SpriteType::Background]);
 			}
 		}
@@ -196,7 +197,11 @@ void Game::draw()
 		}
 		else if (mState == StateGame::PAUSE)
 		{
-			mDrawString("Pause\nPress enter to continue...", sf::Color::Red);
+			mDrawString("Pause\nPress enter to continue...");
+		}
+		else if (mState == StateGame::WINGAME)
+		{
+			mDrawString("Congratulations!\nYou have covered over 80% of the board!\nPress Enter to start again...\nPress escape to back to main menu...");
 		}
 
 		
@@ -256,7 +261,6 @@ void Game::update()
 				mMusic[Music::GAMEOVER].stop();
 				mMusic[Music::GAMEOVER].play();
 				mState = StateGame::GAMEOVER;
-				std::cout << "GameOver";
 			}
 			else if (mBoard[mCordSnake[0].x][mCordSnake[0].y] == Board::Apple)
 			{
@@ -268,6 +272,10 @@ void Game::update()
 
 				mPlaceApple();
 				mAppleCounter++;
+				if (mAppleCounter >= 0.8 * mBoardTilesNumber * mBoardTilesNumber)
+				{
+					mState = StateGame::WINGAME;
+				}
 			}
 			else
 				mBoard[mCordSnake[0].x][mCordSnake[0].y] = Board::Snake;
@@ -322,7 +330,7 @@ void Game::events()
 					mClock.restart();
 				}
 			}
-			else if (mState == StateGame::GAMEOVER)
+			else if (mState == StateGame::GAMEOVER || mState == StateGame::WINGAME)
 			{
 				if (event.key.code == sf::Keyboard::Key::Enter)
 				{

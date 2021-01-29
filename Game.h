@@ -14,7 +14,7 @@ enum class Board {Empty, Apple, Snake};
 
 //Possible states of game
 enum class StateGame {
-	MENU, INGAME, GAMEOVER, PAUSE, EXIT
+	MENU, INGAME, GAMEOVER, WINGAME, PAUSE, EXIT
 };
 
 struct Cordinate
@@ -102,7 +102,7 @@ private:
 	/* Calculates position in pixels of snake's part or apple for given cordinates
 	Draws it in the mRender */
 	void mDrawOnBoard(SpriteType, Cordinate);
-	void mDrawString(std::string, sf::Color = sf::Color::Red, float y = -1, float x = -1);
+	void mDrawString(std::string, sf::Color = sf::Color(45,181,73), float y = -1, float x = -1);
 
 	//Place apple somewhere on the board
 	void mPlaceApple();
